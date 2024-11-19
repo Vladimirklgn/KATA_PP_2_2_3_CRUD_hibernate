@@ -1,17 +1,18 @@
-package org.example.entity;
+package org.web.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
-
+    @Column(name = "name")
     private String name;
+    @Column(name = "email")
     private String email;
 
     public User() {
@@ -45,5 +46,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
