@@ -1,35 +1,48 @@
 package org.web.service;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.web.dao.UserDao;
 import org.web.model.User;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Service
 public class UserServiceImpl implements UserService {
 
+    private final UserDao userDao;
+
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    @Transactional
     @Override
     public List<User> getUsers() {
-        return List.of();
+        return userDao.getUsers();
     }
 
+    @Transactional
     @Override
     public void addUser(User user) {
-
+        userDao.addUser(user);
     }
 
+    @Transactional
     @Override
     public User getUser(int id) {
-        return null;
+        return userDao.getUser(id);
     }
 
+    @Transactional
     @Override
     public void updateUser(User user) {
-
+        userDao.updateUser(user);
     }
 
+    @Transactional
     @Override
     public void deleteUser(int id) {
-
+        userDao.deleteUser(id);
     }
 }

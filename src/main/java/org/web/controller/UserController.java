@@ -24,10 +24,9 @@ public class UserController {
         return "users";
     }
 
-    @GetMapping(value = "new")
-    public String newUser(Model model) {
-        model.addAttribute("user", new User());
-        return "new";
+    @GetMapping(value = "/new")
+    public String newUser(@ModelAttribute("user") User user) {
+        return "add-user";
     }
 
     @PostMapping("/addUser")
