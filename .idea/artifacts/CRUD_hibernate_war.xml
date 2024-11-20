@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CRUD_hibernate:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/CRUD_hibernate_war</output-path>
+    <root id="archive" name="CRUD_hibernate_war.war">
+      <element id="artifact" artifact-name="CRUD_hibernate:war exploded" />
+    </root>
+  </artifact>
+</component>
